@@ -87,7 +87,7 @@ class Lista:
         elif(pos < 0 or pos > self.longitud() - 1):
             print("Error!, posicion no valida")
         elif(pos == 0):
-            self.cabeza = cabeza.getSiguiente()
+            self.cabeza = self.cabeza.getSiguiente()
         else:
             puntero = self.cabeza
             count = 0
@@ -106,7 +106,7 @@ class Lista:
                 break
             puntero = puntero.getSiguiente()
             count += 1
-        return count
+        return pos
 
     def vaciar(self):
         self.cabeza = None
@@ -144,7 +144,7 @@ if __name__ == "__main__":
             else:
                 long = int(input("Defina la longitud inicial de la lista: "))
                 for i in range(0, long):
-                    el = input(f"Agrega el elemento {i}: ")
+                    el = input(f"Agrega el elemento en la posición {i}: ")
                     lista1.agregar(el)
                 print("Se llenó la lista")
         elif(opcion == 3):
